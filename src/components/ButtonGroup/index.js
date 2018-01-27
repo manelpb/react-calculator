@@ -43,20 +43,25 @@ class ButtonGroup extends PureComponent {
           const columns = this.getColumns(start,  numColumns);
 
           return (
-            columns.map((item, idx) => (
-              <Button
-                key={idx}
-                width={(item.double) ? this.props.buttonWidth * 2: this.props.buttonWidth}
-                height={this.props.buttonWidth}
-                backgroundColor={this.props.buttonBackgroundColor}
-                disabled={item.disabled}
-                onClick={() => {
-                  this.props.onButtonClick(item);
-                }}
-              >
-                {item.label}
-              </Button>
-            ))
+            columns.map((item, idx) => {
+              const width = (item.double) ? this.props.buttonWidth * 2: this.props.buttonWidth;
+              const backgroundColor = this.props.buttonBackgroundColor;
+
+              return (
+                <Button
+                  key={idx}
+                  width={width}
+                  height={this.props.buttonWidth}
+                  backgroundColor={backgroundColor}
+                  disabled={item.disabled}
+                  onClick={() => {
+                    this.props.onButtonClick(item);
+                  }}
+                >
+                  {item.label}
+                </Button>
+              );
+            })
           );
         })}
       </Container>

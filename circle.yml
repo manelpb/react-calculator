@@ -1,0 +1,27 @@
+machine:
+    timezone: America/Toronto
+    node:
+        version: 8.9.4
+    environment:
+        ES_TARGET: ES5
+
+dependencies:
+    cache_directories:
+        - ~/react-calculator/node_modules
+
+    override:
+        - cd ~/react-calculator && npm install
+
+compile:
+    override:
+        - cd ~/react-calculator && npm run build-ci
+
+test:
+    override:
+        - cd ~/react-calculator && npm run test:ci
+    post:
+        - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+
+deployment:
+  commands:
+    - cd ~/react-calculator && npm run deploy
