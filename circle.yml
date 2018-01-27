@@ -12,10 +12,6 @@ dependencies:
     override:
         - cd ~/react-calculator && npm install
 
-compile:
-    override:
-        - cd ~/react-calculator && npm run build-ci
-
 test:
     override:
         - cd ~/react-calculator && npm run test:ci
