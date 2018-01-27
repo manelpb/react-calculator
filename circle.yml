@@ -5,6 +5,11 @@ machine:
     environment:
         ES_TARGET: ES5
 
+general:
+    branches:
+        only:
+            - master
+
 dependencies:
     cache_directories:
         - ~/react-calculator/node_modules
