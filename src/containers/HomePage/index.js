@@ -19,6 +19,7 @@ class HomePage extends Component {
       ...digits,
       {
         label: '.',
+        disabled: true,
         sort: 1,
       },
       {
@@ -34,7 +35,7 @@ class HomePage extends Component {
   createOptions = () => {
     const items = ['C', '+/-', '%'].map((op) => ({
       label: op,
-      onClick: this.onClickButton,
+      disabled: (op !== 'C')
     }));
 
     return items;
@@ -43,7 +44,6 @@ class HomePage extends Component {
   createOperators = () => {
     const items = ['/', '*', '-', '+', '='].map((op) => ({
       label: op,
-      onClick: this.onClickButton,
     }));
 
     return items;

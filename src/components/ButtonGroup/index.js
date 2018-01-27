@@ -49,6 +49,7 @@ class ButtonGroup extends PureComponent {
                 width={(item.double) ? this.props.buttonWidth * 2: this.props.buttonWidth}
                 height={this.props.buttonWidth}
                 backgroundColor={this.props.buttonBackgroundColor}
+                disabled={item.disabled}
                 onClick={() => {
                   this.props.onButtonClick(item);
                 }}

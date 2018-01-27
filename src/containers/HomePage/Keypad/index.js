@@ -13,6 +13,16 @@ class Keypad extends Component {
         this.props.onButtonClick(item);
     }
 
+    onKeyPressed = (item) => {
+        this.props.onButtonClick({
+            label: isNaN(Number(item.key)) ? item.key : Number(item.key),
+        })
+    }
+
+    componentWillMount() {
+        document.addEventListener("keydown", this.onKeyPressed.bind(this));
+    }
+
     render() {
         return (
             <Row>

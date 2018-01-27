@@ -2,7 +2,7 @@ export function addKey(operations, currentKey) {
     let newOperations = operations;
     let currentOperation = 0;
 
-    if (currentKey === 'C') {
+    if (typeof currentKey === 'string' && (currentKey.toString().toUpperCase() === 'C' || currentKey.toString().toUpperCase() === 'ESCAPE')) {
         // clean the operations
         newOperations = [0];
         currentOperation = 0;
