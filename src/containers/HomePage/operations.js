@@ -17,22 +17,11 @@ export function addKey(operations, currentKey) {
                 // and replace last key with this new concated number
                 currentOperation = operations[lastKeyIndex] = Number(`${lastKey}${currentKey}`);
             } else {
-                // last key wasn't a number
-                // check if it has .
-                if (lastKey.indexOf('.') >= 0) {
-                    // todo
-                } else {
-                    // last key was an operation
-                    // so add this current key
-                    operations.push(currentKey);
-                    currentOperation = currentKey;
-                }
+                // last key was an operation
+                // so add this current key
+                operations.push(currentKey);
+                currentOperation = currentKey;
             }
-        }
-        // i'm trying to add an operation
-        // first check if i'm trying to add .
-        else if (currentKey && currentKey.indexOf('.') >= 0) {
-            // todo
         }
         else if (lastKey !== currentKey) { // avoid duplicate sequencial ops
             if (typeof lastKey === 'string') {

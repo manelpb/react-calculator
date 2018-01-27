@@ -3,33 +3,34 @@ import PropTypes from 'prop-types';
 import Container from './Container';
 import Button from 'components/Button';
 
-class ButtonGroup extends PureComponent {
-  /**
-   * sort columns
-   */
-  sortColumns = (columns) => columns.sort((a, b) => {
-    if (a.sort && a.sort < b.sort) {
-      return -1;
-    }
-    else if (a.sort && a.sort > b.sort) {
-      return 1;
-    }
-    else if (a.label < b.label) {
-      return -1;
-    }
-    else if (a.label > b.label) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+/**
+ * sort columns
+ */
+export const sortColumns = (columns) => columns.sort((a, b) => {
+  if (a.sort && a.sort < b.sort) {
+    return -1;
+  }
+  else if (a.sort && a.sort > b.sort) {
+    return 1;
+  }
+  else if (a.label < b.label) {
+    return -1;
+  }
+  else if (a.label > b.label) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+
+export class ButtonGroup extends PureComponent {
 
   /**
    * get columns from x to y
    */
   getColumns = (start, end) => {
     const columns = this.props.items.slice(start, start + end);
-    return (this.props.sortItems) ? this.sortColumns(columns) : columns;
+    return (this.props.sortItems) ? sortColumns(columns) : columns;
   }
 
   render() {

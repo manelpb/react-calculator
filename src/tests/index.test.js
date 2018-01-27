@@ -1,4 +1,7 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import configureStore from '../configureStore';
+import App from '../App';
 
 describe('configureStore', () => {
     it ('should return the store', () => {
@@ -8,7 +11,6 @@ describe('configureStore', () => {
         };
 
         const store = configureStore();
-
         expect(store.getState()).toEqual(expected);
     });
 });
