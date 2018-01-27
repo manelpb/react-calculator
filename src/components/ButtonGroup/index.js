@@ -50,7 +50,7 @@ class ButtonGroup extends PureComponent {
                 height={this.props.buttonWidth}
                 backgroundColor={this.props.buttonBackgroundColor}
                 onClick={() => {
-                  console.log(item);
+                  this.props.onButtonClick(item);
                 }}
               >
                 {item.label}
@@ -78,6 +78,11 @@ ButtonGroup.propTypes = {
    * Container width (optional)
    */
   width: PropTypes.number,
+
+  /**
+   * Event on button click
+   */
+  onButtonClick: PropTypes.func,
 
   /**
    * Button background color

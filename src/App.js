@@ -4,6 +4,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import HomePage from 'containers/HomePage';
 
+
 class App extends PureComponent {
   render() {
     return (

@@ -1,32 +1,28 @@
 import React, { Component } from 'react';
+
+/** components */
 import Container from 'components/Container';
-import ButtonGroup from 'components/ButtonGroup';
-import Row from 'components/Row';
 import Column from 'components/Column';
-import Display from 'components/Display';
+
+/** connected components */
+import CalcDisplay from './CalcDisplay';
+import Keypad from './Keypad';
 
 class HomePage extends Component {
-  onClickButton = () => {
-
-  }
-
   createItems = () => {
     const length = 9;
     const digits = [...Array(length)].map((_, idx) => ({
-      label: (length - idx).toString(),
-      onClick: () => this.onClickButton(idx),
+      label: (length - idx),
     }));
 
     const items = [
       ...digits,
       {
         label: '.',
-        onClick: () => {},
         sort: 1,
       },
       {
-        label: '0',
-        onClick: () => {},
+        label: 0,
         sort: 0,
         double: true,
       },
@@ -38,7 +34,7 @@ class HomePage extends Component {
   createOptions = () => {
     const items = ['C', '+/-', '%'].map((op) => ({
       label: op,
-      onClick: () => {}
+      onClick: this.onClickButton,
     }));
 
     return items;
@@ -47,7 +43,7 @@ class HomePage extends Component {
   createOperators = () => {
     const items = ['/', '*', '-', '+', '='].map((op) => ({
       label: op,
-      onClick: () => {}
+      onClick: this.onClickButton,
     }));
 
     return items;
@@ -57,32 +53,12 @@ class HomePage extends Component {
     return (
       <Container className="App" style={{ justifyContent: 'center', display: 'flex' }}>
         <Column style={{ width: 200 }}>
-          <Display>11122</Display>
-          <Row>
-            <Column>
-              <ButtonGroup
-                cols={3}
-                rows={1}
-                items={this.createOptions()}
-                buttonWidth={50}
-                buttonBackgroundColor="#e0e0e0"
-              />
-              <ButtonGroup
-                cols={4}
-                rows={5}
-                items={this.createItems()}
-                buttonWidth={50}
-                buttonBackgroundColor="#fdfafa"
-              />
-            </Column>
-            <ButtonGroup
-              cols={1}
-              rows={5}
-              items={this.createOperators()}
-              buttonWidth={50}
-              buttonBackgroundColor="#ffccb3"
-            />
-          </Row>
+          <CalcDisplay />
+          <Keypad
+            numericKeys={this.createItems()}
+            operationKeys={this.createOperators()}
+            optionKeys={this.createOptions()}
+          />
         </Column>
       </Container>
     );
