@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const H1 = styled.button`
-  width: ${props => `${props.width}px`};
-  height: ${props => `${props.height}px`};
+  width: ${props => `${props.width || 10}px`};
+  height: ${props => `${props.height || 10}px`};
   background-color: ${props => props.backgroundColor || 'transparent'};
   text-align: center;
 

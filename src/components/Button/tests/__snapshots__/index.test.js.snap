@@ -2,8 +2,8 @@
 
 exports[`should render a html button 1`] = `
 .c0 {
-  width: undefinedpx;
-  height: undefinedpx;
+  width: 10px;
+  height: 10px;
   background-color: transparent;
   text-align: center;
 }
