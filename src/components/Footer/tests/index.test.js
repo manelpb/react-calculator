@@ -6,4 +6,5 @@ import { shallow } from 'enzyme';
 it('should render a Container', () => {
     const render = shallow(<Footer />);
     expect(render.find(Container).length).toEqual(1);
+    expect(render).toMatchSnapshot();
 })

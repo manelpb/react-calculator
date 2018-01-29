@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 2 buttons 1`] = `
+<styled.div
+  width="100px"
+>
+  <styled.button
+    height={50}
+    key="0"
+    onClick={[Function]}
+    width={50}
+  >
+    a
+  </styled.button>
+  <styled.button
+    height={50}
+    key="1"
+    onClick={[Function]}
+    width={50}
+  >
+    b
+  </styled.button>
+</styled.div>
+`;

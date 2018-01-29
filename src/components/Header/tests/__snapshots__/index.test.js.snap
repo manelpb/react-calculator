@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a Container and H1 1`] = `
+<styled.div
+  className="header"
+>
+  <styled.h1>
+    React Calculator App
+  </styled.h1>
+</styled.div>
+`;

@@ -17,7 +17,7 @@ it('should render 2 buttons', () => {
 
     const render = shallow(<ButtonGroup rows={1} cols={2} items={items} />);
     expect(render.find(Button).length).toEqual(2);
-    // expect(render).toMatchSnapshot();
+    expect(render).toMatchSnapshot();
 })
 
 it('should sort columns', () => {

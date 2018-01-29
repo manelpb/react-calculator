@@ -7,4 +7,5 @@ import { shallow } from 'enzyme';
 it('should render a Container and H1', () => {
     const render = shallow(<Header />);
     expect(render.find(Container).length + render.find(H1).length).toEqual(2);
+    expect(render).toMatchSnapshot();
 })

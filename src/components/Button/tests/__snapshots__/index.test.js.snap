@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a html button 1`] = `
+.c0 {
+  width: undefinedpx;
+  height: undefinedpx;
+  background-color: transparent;
+  text-align: center;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+}
+
+<button
+  className="c0"
+/>
+`;

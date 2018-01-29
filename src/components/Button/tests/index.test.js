@@ -7,6 +7,7 @@ import styled from 'styled-components'
 it('should render a html button', () => {
     const render = shallow(<Button />);
     expect(render.find('button').length).toEqual(1);
+    expect(render).toMatchSnapshot();
 })
 
 it('should render a html button with style', () => {
